@@ -7,7 +7,18 @@ class Offsets {
 public:
 	Offsets();
 
+	static int deref_pointer_in_game_space_fn;
+
 	static int GameTime;
+
+	static int ActiveTargetIndex;
+	static int OHeroList;
+	static int OMinionList;
+	static int OTurretList;
+	static int MissileMap;
+
+	static int ZoomClass;
+	static int MaxZoom;
 
 	static int ObjIndex;
 	static int ObjTeam;
@@ -55,6 +66,7 @@ public:
 	static int ObjAdditionalApMulti;
 	static int ObjManaRegen;
 	static int ObjHealthRegen;
+	static int ObjArmorPen;
 
 	static int Ping;
 	static int OffPing;
@@ -108,6 +120,13 @@ public:
 	static int SpellSlotSmiteTimer;
 	static int SpellSlotSmiteCharges;
 
+	static int activeCastAutoAtack;
+	static int activeCastStarPos;
+	static int activeCastEndPos;
+	static int activeCastEndPos2;
+	static int AttackDelay;
+	static int AttackCast;
+
 	static int ObjectManager;
 	static int LocalPlayer;
 
@@ -132,6 +151,7 @@ public:
 	static int MissileMapRoot;
 	static int MissileMapKey;
 	static int MissileMapVal;
+	static int MissileDestCheck;
 
 	static int SpellCastSpellInfo;
 	static int SpellCastStartTime;

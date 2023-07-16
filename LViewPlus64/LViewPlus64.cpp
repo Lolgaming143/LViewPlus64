@@ -40,21 +40,14 @@ std::wstring getComputerName() {
 
 int main()
 {
-	printf(
-		"	:::    :::     ::: ::::::::::: :::::::::: :::       ::: \n"
-		"	:+:    :+:     :+:     :+:     :+:        :+:       :+: \n"
-		"	+:+    +:+     +:+     +:+     +:+        +:+       +:+ \n"
-		"	+#+    +#+     +:+     +#+     +#++:++#   +#+  +:+  +#+ \n"
-		"	+#+     +#+   +#+      +#+     +#+        +#+ +#+#+ +#+ \n"
-		"	#+#      #+#+#+#       #+#     #+#         #+#+# #+#+#  \n"
-		"	########## ###     ########### ##########   ###   ###   \n\n"
+	printf( "TEST  \n"
 	);
 
 	Overlay overlay = Overlay();
 	LeagueMemoryReader reader = LeagueMemoryReader();
 
 	try {
-		printf("[+] Initializing PyModule\n");
+		printf("[+] Initializing Python Module\n");
 		PyImport_AppendInittab("LViewPlus64", &PyInit_LViewPlus64);
 		Py_Initialize();
 
@@ -92,7 +85,7 @@ void MainLoop(Overlay& overlay, LeagueMemoryReader& reader) {
 		if (overlay.IsVisible()) {
 			// One some systems the ingame cursor is replaced with the default Windows cursor
 			// With the WS_EX_TRANSPARENT window flag enabled the cursor is as expected but the user cannot control the overlay
-			if (Input::WasKeyPressed(HKey::F8)) {
+			if (Input::IsKeyDown(HKey::LSHIFT)) {
 				overlay.ToggleTransparent();
 			}
 			if (!isLeagueWindowActive) {

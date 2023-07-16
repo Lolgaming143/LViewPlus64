@@ -1,4 +1,5 @@
 #include "Texture2D.h"
+#include <string>
 
 Texture2D* Texture2D::LoadFromFile(ID3D11Device* dxDevice, std::string file)
 {

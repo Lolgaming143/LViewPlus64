@@ -100,7 +100,7 @@ void LeagueMemoryReader::ReadChamps(MemSnapshot& ms) {
 	ms.champions.clear();
 	ms.others.clear();
 
-	auto HeroList = Mem::ReadDWORD(hProcess, moduleBaseAddr + Offsets::HeroList);
+	auto HeroList = Mem::ReadDWORD(hProcess, moduleBaseAddr + Offsets::OHeroList);
 	auto pList = Mem::ReadDWORD(hProcess, HeroList + 0x8);
 	UINT pSize = Mem::ReadDWORD(hProcess, HeroList + 0x10);
 
@@ -168,7 +168,7 @@ void LeagueMemoryReader::ReadMinions(MemSnapshot& ms) {
 	ms.minions.clear();
 	ms.jungle.clear();
 
-	auto MinionList = Mem::ReadDWORD(hProcess, moduleBaseAddr + Offsets::MinionList);
+	auto MinionList = Mem::ReadDWORD(hProcess, moduleBaseAddr + Offsets::OMinionList);
 	auto pList = Mem::ReadDWORD(hProcess, MinionList + 0x8);
 	UINT pSize = Mem::ReadDWORD(hProcess, MinionList + 0x10);
 
@@ -206,7 +206,7 @@ void LeagueMemoryReader::ReadMissiles(MemSnapshot& ms) {
 	
 	static char buff[0x500];
 
-	UINT64 missile_list = Mem::ReadDWORD(hProcess, moduleBaseAddr + Offsets::MissileList);
+	UINT64 missile_list = Mem::ReadDWORD(hProcess, moduleBaseAddr + Offsets::MissileMap);
 	UINT64 numMissiles, rootNode;
 	memcpy(&numMissiles, buff + Offsets::MissileMapCount, sizeof(UINT64));
 	memcpy(&rootNode, buff + Offsets::MissileMapRoot, sizeof(UINT64));
@@ -357,7 +357,7 @@ void LeagueMemoryReader::ReadTurrets(MemSnapshot& ms) {
 
 	ms.turrets.clear();
 
-	auto TurretList = Mem::ReadDWORD(hProcess, moduleBaseAddr + Offsets::TurretList);
+	auto TurretList = Mem::ReadDWORD(hProcess, moduleBaseAddr + Offsets::OTurretList);
 	auto pList = Mem::ReadDWORD(hProcess, TurretList + 0x8);
 	UINT pSize = Mem::ReadDWORD(hProcess, TurretList + 0x10);
 

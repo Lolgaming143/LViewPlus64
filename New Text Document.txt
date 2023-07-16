@@ -1,0 +1,2 @@
+fix linker issue-> E:\projects2\LViewPlus64\LViewPlus64\boost>b2 --with-json toolset=msvc-14.2 address-model=64 variant=release 
+b2 --with-python toolset=msvc-14.2 address-model=64 variant=release 
